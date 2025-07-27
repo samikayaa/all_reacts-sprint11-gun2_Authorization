@@ -1,9 +1,4 @@
-# Authorization_s11d2
-
-[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/asyaisbil/Authorization_s11d2)
-
 Gün Projesi: Friends Database
-0%
 Sosyal Medya hesaplarında Workintech ile ilgili yazdığın bir yazıyı gören biri de senin gibi Workintech'de eğitim almaya başlamış.
 
 Geçen gün sana ulaştı ve beraber kahve içmeye gittiniz. Sana süper bir fikri olduğunu söyledi. Bir platform kurmak istiyor. Üye olanlar arkadaşlarını da ekleyebilecek. Mesaj atabilecek, istediği bir yazıyı post edebilecek. Başkalarının yazdıklarını görebilecek.

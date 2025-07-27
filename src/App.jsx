@@ -6,6 +6,9 @@ import Header from './components/Header';
 import FriendsList from './components/FriendsList';
 import AddFriend from './components/AddFriend';
 
+import { Routes, Route } from "react-router-dom";
+import { Switch } from 'react-router-dom/cjs/react-router-dom.min';
+
 function App() {
   useEffect(() => {
     axios
@@ -20,7 +23,21 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <LoginForm />
+
+      <Switch>
+        <Route path="/friends">
+          <FriendsList />
+        </Route>
+        <Route path="/login">
+          <LoginForm />
+        </Route>
+        <Route path="/friends/add">
+          <AddFriend />
+        </Route>
+        <Route path="/">
+          <FriendsList />
+        </Route>
+      </Switch>
     </div>
   );
 }

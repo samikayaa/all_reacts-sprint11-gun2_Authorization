@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
+
 function AddFriend() {
   const {
     register,
