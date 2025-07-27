@@ -1,5 +1,7 @@
 import { createContext, useState } from "react";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from "react-router-dom";
+import useLocalStorage from "../hooks/useLocalStorage"
+
 
 
 
@@ -11,12 +13,15 @@ export function AuthContextProvider({ children }) {
 
     const history = useHistory();
 
-    const [authUserInfo, setAuthUserInfo] = useState({});
+    const [authUserInfo, setAuthUserInfo] = useLocalStorage("s11d2", {}); //useState({});
 
     const login = (formData) => {
         axios
             .post("https://nextgen-project.onrender.com/api/s11d2/login", formData)
-            .then(response => setAuthUserInfo(response.data))
+            .then(response => {
+                setAuthUserInfo(response.data);
+                history.push("/"); // "/frieds" sayfasına da gider.
+            })
             .catch(error => console.log(error));
     }
 

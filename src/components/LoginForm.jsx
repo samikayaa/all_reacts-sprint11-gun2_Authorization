@@ -1,5 +1,6 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import AuthContext from '../context/AuthContext';
 
 function LoginForm() {
   const [form, setForm] = useState({
@@ -7,12 +8,11 @@ function LoginForm() {
     password: '',
   });
 
+  const { login } = useContext(AuthContext);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios
-      .post("https://nextgen-project.onrender.com/api/s11d2/login")
-      .then(response => console.log(response.data))
-      .catch(error => console.log(error))
+    login(form);
   };
 
   const handleChange = (e) => {

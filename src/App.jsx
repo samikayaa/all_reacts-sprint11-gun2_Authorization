@@ -8,6 +8,7 @@ import AddFriend from './components/AddFriend';
 
 import { Routes, Route } from "react-router-dom";
 import { Switch } from 'react-router-dom/cjs/react-router-dom.min';
+import { AuthContextProvider } from "./context/AuthContext";
 
 function App() {
   useEffect(() => {
@@ -21,24 +22,26 @@ function App() {
       .catch((error) => console.log(error));
   }, []);
   return (
-    <div className="App">
-      <Header />
+    <AuthContextProvider>
+      <div className="App">
+        <Header />
 
-      <Switch>
-        <Route path="/friends">
-          <FriendsList />
-        </Route>
-        <Route path="/login">
-          <LoginForm />
-        </Route>
-        <Route path="/friends/add">
-          <AddFriend />
-        </Route>
-        <Route path="/">
-          <FriendsList />
-        </Route>
-      </Switch>
-    </div>
+        <Switch>
+          <Route path="/friends">
+            <FriendsList />
+          </Route>
+          <Route path="/login">
+            <LoginForm />
+          </Route>
+          <Route path="/friends/add">
+            <AddFriend />
+          </Route>
+          <Route path="/">
+            <FriendsList />
+          </Route>
+        </Switch>
+      </div>
+    </AuthContextProvider>
   );
 }
 
