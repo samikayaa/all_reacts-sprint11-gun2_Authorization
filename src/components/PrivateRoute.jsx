@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import AuthContext from "../context/AuthContext";
 import { Redirect } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 
 
-function PrivateRoute({ children }, ...rest) {
+function PrivateRoute({ children, ...rest }) {
 
     const { isLoggedIn } = useContext(AuthContext);
 

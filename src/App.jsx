@@ -6,7 +6,6 @@ import Header from './components/Header';
 import FriendsList from './components/FriendsList';
 import AddFriend from './components/AddFriend';
 
-import { Routes, Route } from "react-router-dom";
 import { Switch } from 'react-router-dom/cjs/react-router-dom.min';
 import { AuthContextProvider } from "./context/AuthContext";
 import PrivateRoute from "./components/PrivateRoute"
@@ -34,10 +33,10 @@ function App() {
           <PrivateRoute exact path="/friends">
             <FriendsList />
           </PrivateRoute>
-          <PrivateRoute path="/login">
+          <Route exact path="/login">
             <LoginForm />
-          </PrivateRoute>
-          <PrivateRoute path="/friends/add">
+          </Route>
+          <PrivateRoute exact path="/friends/add">
             <AddFriend />
           </PrivateRoute>
 
